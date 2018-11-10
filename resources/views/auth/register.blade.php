@@ -196,14 +196,14 @@
                                                 @endif
                                             </div>
 
-                                            <div class="form-group {!! $errors->has('bio') ? 'has-error' : '' !!}">
-                                                {!! Form::label('bio', 'Votre Bio', ['class' => 'text-uppercase mt-10']) !!}
-                                                {!! Form::textarea('bio', old('bio'), ['class' => 'form-control', 'id' => 'bio', 'placeholder' => 'Votre Biographie', 'onfocus' => "this.placeholder = ''", 'onblur' => "this.placeholder = 'Votre Email'", 'required']) !!}
-                                                @if( $errors->has('bio'))
-                                                    @component('Layout.error')
-                                                        {{$errors->first('bio')}}
-                                                    @endcomponent
-                                                @endif
+                                            <div class="form-group {!! $errors->has('localisation') ? 'has-error' : '' !!}">
+                                                    {!! Form::label('localisation', 'Localisation', ['class' => 'text-uppercase mt-10']) !!}
+                                                    {!! Form::text('localisation', old('localisation'), ['class' => 'form-control', 'id' => 'localisation', 'placeholder' => 'Votre Localisation', 'onfocus' => "this.placeholder = ''", 'onblur' => "this.placeholder = 'Votre Localisation'", 'required']) !!}
+                                                    @if( $errors->has('localisation'))
+                                                        @component('Layout.error')
+                                                            {{$errors->first('localisation')}}
+                                                        @endcomponent
+                                                    @endif
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
