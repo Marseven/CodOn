@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('Layout.Front')
 
 @section('content')
     <div class="col-md-6">

@@ -70,21 +70,23 @@
         <div class="container-fluid">
             <div class="row fullscreen align-items-center justify-content-start">
                 <div class="col-lg-5 col-md-6 image-container justify-content-center align-items-center">
-                    <img class="img-fluid" src="img/banner-img.png" alt="">
+                    <img class="img-fluid" src="{{ asset('/Front/img/banner-img.png') }}" alt="">
                 </div>
                 <div class="banner-content col-lg-7 col-md-6">
                     <h1>
-                        Digital Production <br>
-                        Web Agency
+                        Cod'On <br>
+                        Communauté de développeurs informatique
                     </h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.
+                      Tout grand changement est impulsé par une communauté, et ce dans tout les domaines.
+                      C'est pour cette raison que nous pensons que seule une communauté soudée et unie pourra
+                      permettre un meilleur développement du développement informatique au Gabon et plus tard en Afrique.
                     </p>
-                    <a href="#" class="genric-btn2 arrow">Start a project<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="{{route('register')}}" class="genric-btn2 arrow">Rejoindre le mouvement<span class="lnr lnr-arrow-right"></span></a>
                 </div>
             </div>
         </div>
-        <img class="headers-img fullscreen" src="img/banner-img-bg.png" alt="">
+        <img class="headers-img fullscreen" src="{{ asset('/Front/img/banner-img-bg.png') }}" alt="">
     </section>
     <!-- End banner Area -->
     <!-- Start services Area -->
@@ -93,8 +95,8 @@
             <div class="row d-flex justify-content-center section-title">
                 <div class="col-lg-10">
                     <div class="title text-center">
-                        <h6 class="mb-10">What we do</h6>
-                        <h1>Our Offered Services</h1>
+                        <h6 class="mb-10">Où allons-nous ?</h6>
+                        <h1>Notre Vision</h1>
                     </div>
                 </div>
             </div>
@@ -102,7 +104,7 @@
                 <div class="col-lg-4">
                     <div class="single-service">
                         <img src="img/s1.png" alt="">
-                        <a href="#"><h4>Illustrations</h4></a>
+                        <a href="#"><h4>Fédérer</h4></a>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
                         </p>
@@ -111,7 +113,7 @@
                 <div class="col-lg-4">
                     <div class="single-service">
                         <img src="img/s2.png" alt="">
-                        <a href="#"><h4>Brand Identity</h4></a>
+                        <a href="#"><h4>Collaborer</h4></a>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
                         </p>
@@ -120,7 +122,7 @@
                 <div class="col-lg-4">
                     <div class="single-service">
                         <img src="img/s3.png" alt="">
-                        <a href="#"><h4>Printing Designs</h4></a>
+                        <a href="#"><h4>Innover</h4></a>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
                         </p>
@@ -136,16 +138,16 @@
             <div class="row d-flex justify-content-center section-title">
                 <div class="col-lg-10">
                     <div class="title text-center">
-                        <h6 class="mb-10">Our Portfolio</h6>
-                        <h1>Latest Completed Projects</h1>
+                        <h6 class="mb-10">Les Projets</h6>
+                        <h1>Les derniers Projets de nos membres</h1>
                     </div>
                 </div>
             </div>
             <div align="right" class="cat-list">
-                <a class="btn btn-default filter-button" data-filter="all">All Category</a>
-                <a class="btn btn-default filter-button" data-filter="br">Branding</a>
-                <a class="btn btn-default filter-button" data-filter="pr">Printing</a>
-                <a class="btn btn-default filter-button" data-filter="ill">Illustrations</a>
+                <a class="btn btn-default filter-button" data-filter="all">Tout</a>
+                <a class="btn btn-default filter-button" data-filter="br">Tecnhologie</a>
+                <a class="btn btn-default filter-button" data-filter="pr">E-Commerce</a>
+                <a class="btn btn-default filter-button" data-filter="ill">Santé</a>
             </div>
             <div class="projects-wrap">
                 <div class="row align-items-end single-projects filter br">
@@ -157,7 +159,7 @@
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.
                         </p>
-                        <a href="#" class="genric-btn arrow">Project details<span class="lnr lnr-arrow-right"></span></a>
+                        <a href="#" class="genric-btn arrow">Détails du projet<span class="lnr lnr-arrow-right"></span></a>
                     </div>
                 </div>
                 <div class="row align-items-end single-projects filter pr">
@@ -166,7 +168,7 @@
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.
                         </p>
-                        <a href="#" class="genric-btn arrow">Project details<span class="lnr lnr-arrow-right"></span></a>
+                        <a href="#" class="genric-btn arrow">Détails du projet<span class="lnr lnr-arrow-right"></span></a>
                     </div>
                     <div class="col-md-6 project-img">
                         <img class="img-fluid" src="img/p2.jpg" alt="">
@@ -181,7 +183,7 @@
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.
                         </p>
-                        <a href="#" class="genric-btn arrow">Project details<span class="lnr lnr-arrow-right"></span></a>
+                        <a href="#" class="genric-btn arrow">Détails du projet<span class="lnr lnr-arrow-right"></span></a>
                     </div>
                 </div>
             </div>
@@ -220,13 +222,15 @@
             <div class="row align-items-center justify-content-between">
                 <div class="offset-lg-1 col-lg-4 col-md-12 information-left">
                     <h1>
-                        Digital Production
-                        Web Agency
+                      Cod'On <br>
+                      Communauté de développeurs informatique
                     </h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis.
+                      Tout grand changement est impulsé par une communauté, et ce dans tout les domaines.
+                      C'est pour cette raison que nous pensons que seule une communauté soudée et unie pourra
+                      permettre un meilleur développement du développement informatique au Gabon et plus tard en Afrique.
                     </p>
-                    <a href="#" class="genric-btn arrow text-uppercase">Start A project<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="#" class="genric-btn arrow text-uppercase">Commencer un Projet<span class="lnr lnr-arrow-right"></span></a>
                 </div>
                 <img class="image-right" src="img/information-img.png" alt="">
             </div>
@@ -239,8 +243,8 @@
             <div class="row d-flex justify-content-center section-title">
                 <div class="col-lg-10">
                     <div class="title text-center">
-                        <h6 class="mb-10">Testimonials</h6>
-                        <h1>What our Client’s Say</h1>
+                        <h6 class="mb-10">Témoignage</h6>
+                        <h1>Que disent nos membres ?</h1>
                     </div>
                 </div>
             </div>
@@ -347,8 +351,8 @@
             <div class="row d-flex justify-content-center section-title">
                 <div class="col-lg-10">
                     <div class="title text-center">
-                        <h6 class="mb-10">Our Blog Posts</h6>
-                        <h1>Latest from our Blog</h1>
+                        <h6 class="mb-10">Notre Blog</h6>
+                        <h1>Les derniers articles de notre Blog.</h1>
                     </div>
                 </div>
             </div>
@@ -382,7 +386,7 @@
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.
                             </p>
-                            <a href="#" class="genric-btn arrow">View details<span class="lnr lnr-arrow-right"></span></a>
+                            <a href="#" class="genric-btn arrow">Voir Plus<span class="lnr lnr-arrow-right"></span></a>
                         </div>
                     </div>
                 </div>
@@ -415,7 +419,7 @@
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.
                             </p>
-                            <a href="#" class="genric-btn arrow">View details<span class="lnr lnr-arrow-right"></span></a>
+                            <a href="#" class="genric-btn arrow">Voir Plus<span class="lnr lnr-arrow-right"></span></a>
                         </div>
                     </div>
                 </div>
@@ -448,7 +452,7 @@
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.
                             </p>
-                            <a href="#" class="genric-btn arrow">View details<span class="lnr lnr-arrow-right"></span></a>
+                            <a href="#" class="genric-btn arrow">Voir Plus<span class="lnr lnr-arrow-right"></span></a>
                         </div>
                     </div>
                 </div>
@@ -463,25 +467,25 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="single-counter">
                         <h1 class="counter">2536</h1>
-                        <span>Happy clients</span>
+                        <span>Membres Heureux</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="single-counter">
                         <h1 class="counter">7562</h1>
-                        <span>Total Projects</span>
+                        <span>Projets</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="single-counter">
                         <h1 class="counter">2013</h1>
-                        <span>Cups Coffee</span>
+                        <span>Tasses de café</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="single-counter">
                         <h1 class="counter">10365</h1>
-                        <span>Tickets Submitted</span>
+                        <span>Participants aux sessions</span>
                     </div>
                 </div>
             </div>
