@@ -40,12 +40,24 @@
             </div>
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li class="menu-active"><a href="/">Accueil</a></li>
-                    <li><a href="/">Forum</a></li>
-                    <li><a href="/">Blog</a></li>
+                    <li class="menu-active"><a href="{{ route('accueil') }}">Accueil</a></li>
+                    <li><a href="{{ route('forum.subject') }}">Forum</a></li>
+                    <li><a href="{{ route('blog') }}">Blog</a></li>
                     <li><a href="{{route('contact')}}">Contact</a></li>
                     @if(Auth::guest())
-                        <li class="generic-btn circle primary"><a href="{{route('login')}}">Connexion</a></li>
+                        <li><a class="generic-btn circle primary" href="{{route('login')}}">Connexion</a></li>
+                    @endif
+                    @if(Auth::user())
+                        <li><a href="{{ route('compte') }}">Mon Compte</a></li>
+                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                Déconnexion
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+
+                        </li>
                     @endif
                 </ul>
             </nav>
@@ -183,6 +195,7 @@
                                                     @endcomponent
                                                 @endif
                                             </div>
+<<<<<<< HEAD
                                             <div class="form-group {!! $errors->has('location') ? 'has-error' : '' !!}">
                                                     {!! Form::label('localisation', 'Localisation', ['class' => 'text-uppercase mt-10']) !!}
                                                     {!! Form::text('localisation', old('localisation'), ['class' => 'form-control', 'id' => 'localisation', 'placeholder' => 'Votre Localisation', 'onfocus' => "this.placeholder = ''", 'onblur' => "this.placeholder = 'Votre Email'"]) !!}
@@ -191,6 +204,17 @@
                                                             {{$errors->first('localisation')}}
                                                         @endcomponent
                                                     @endif
+=======
+
+                                            <div class="form-group {!! $errors->has('bio') ? 'has-error' : '' !!}">
+                                                {!! Form::label('bio', 'Votre Bio', ['class' => 'text-uppercase mt-10']) !!}
+                                                {!! Form::textarea('bio', old('bio'), ['class' => 'form-control', 'id' => 'bio', 'placeholder' => 'Votre Biographie', 'onfocus' => "this.placeholder = ''", 'onblur' => "this.placeholder = 'Votre Email'", 'required']) !!}
+                                                @if( $errors->has('bio'))
+                                                    @component('Layout.error')
+                                                        {{$errors->first('bio')}}
+                                                    @endcomponent
+                                                @endif
+>>>>>>> 481f81741368dfec4efa5d5fef27a585094c2bc1
                                             </div>
                                         </div>
                                         <div class="col-sm-6">

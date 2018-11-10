@@ -11,11 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
 /*pages statiques*/
 Route::name('accueil')->get('accueil', 'Front\WelcomeController@index');
 Route::name('contact')->get('contact', 'Front\WelcomeController@contact');

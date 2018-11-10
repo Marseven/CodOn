@@ -50,7 +50,7 @@
                         <div class="row">
                             <div class="col-sm-12 col-xs-12">
                                 <div class="mb-30">
-                                    <h3 class="text-center txt-dark mb-10">Se Connecter à COD'ON ADMIN</h3>
+                                    <h3 class="text-center txt-dark mb-10">Se Connecter à Cod'On Administration</h3>
                                     <h6 class="text-center nonecase-font txt-grey">Entrez vos informations.</h6>
                                 </div>
                                 <div class="form-wrap">
@@ -69,7 +69,7 @@
                                             <label class="pull-left control-label mb-10" for="exampleInputpwd_2">Mot de Passe</label>
                                             <a class="capitalize-font txt-primary block mb-10 pull-right font-12" href="forgot-password.html">Mot de passe Oublié ?</a>
                                             <div class="clearfix"></div>
-                                            <input type="password" name="password" class="form-control" required="" id="exampleInputpwd_2" placeholder="Votre mdp">
+                                            <input type="password" name="password" class="form-control" required="" id="exampleInputpwd_2" placeholder="Votre mot de passe">
                                             @if( $errors->has('passord'))
                                                 @component('Layout.error')
                                                     {{$errors->first('password')}}
