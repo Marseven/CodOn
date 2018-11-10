@@ -38,9 +38,9 @@
                     </div>
                     <nav id="nav-menu-container">
                         <ul class="nav-menu">
-                            <li class="menu-active"><a href="#">Accueil</a></li>
-                            <li><a href="/">Forum</a></li>
-                            <li><a href="/">Blog</a></li>
+                            <li class="menu-active"><a href="{{ route('accueil') }}">Accueil</a></li>
+                            <li><a href="{{ route('forum.subject') }}">Forum</a></li>
+                            <li><a href="{{ route('blog') }}">Blog</a></li>
                             <li><a href="{{route('contact')}}">Contact</a></li>
                             @if(Auth::guest())
                                 <li><a class="generic-btn circle primary" href="{{route('login')}}">Connexion</a></li>
@@ -48,7 +48,7 @@
                             @if(Auth::user())
                                 <li><a href="{{ route('compte') }}">Mon Compte</a></li>
                                 <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
+                                                            document.getElementById('logout-form').submit();">
                                         Déconnexion
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
