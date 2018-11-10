@@ -195,16 +195,6 @@
                                                     @endcomponent
                                                 @endif
                                             </div>
-<<<<<<< HEAD
-                                            <div class="form-group {!! $errors->has('location') ? 'has-error' : '' !!}">
-                                                    {!! Form::label('localisation', 'Localisation', ['class' => 'text-uppercase mt-10']) !!}
-                                                    {!! Form::text('localisation', old('localisation'), ['class' => 'form-control', 'id' => 'localisation', 'placeholder' => 'Votre Localisation', 'onfocus' => "this.placeholder = ''", 'onblur' => "this.placeholder = 'Votre Email'"]) !!}
-                                                    @if( $errors->has('localisation'))
-                                                        @component('Layout.error')
-                                                            {{$errors->first('localisation')}}
-                                                        @endcomponent
-                                                    @endif
-=======
 
                                             <div class="form-group {!! $errors->has('bio') ? 'has-error' : '' !!}">
                                                 {!! Form::label('bio', 'Votre Bio', ['class' => 'text-uppercase mt-10']) !!}
@@ -214,7 +204,6 @@
                                                         {{$errors->first('bio')}}
                                                     @endcomponent
                                                 @endif
->>>>>>> 481f81741368dfec4efa5d5fef27a585094c2bc1
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
