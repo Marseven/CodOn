@@ -92,11 +92,11 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group {!! $errors->has('username') ? 'has-error' : '' !!}">
-                                                {!! Form::label('username', 'Username', ['class' => 'text-uppercase mt-10']) !!}
-                                                {!! Form::text('username', old('username'), ['class' => 'form-control', 'id' => 'username', 'placeholder' => 'Votre Username', 'onfocus' => "this.placeholder = ''", 'onblur' => "this.placeholder = 'Votre Username'", 'required']) !!}
-                                                @if( $errors->has('username'))
+                                                {!! Form::label('Username', 'name', ['class' => 'text-uppercase mt-10']) !!}
+                                                {!! Form::text('name', old('name'), ['class' => 'form-control', 'id' => 'name', 'placeholder' => 'Votre username', 'onfocus' => "this.placeholder = ''", 'onblur' => "this.placeholder = 'Votre username'", 'required']) !!}
+                                                @if( $errors->has('name'))
                                                     @component('Layout.error')
-                                                        {{$errors->first('username')}}
+                                                        {{$errors->first('name')}}
                                                     @endcomponent
                                                 @endif
                                             </div>
@@ -133,13 +133,14 @@
                                         </div>
                                     </div>
                                 </div>
+                                {!! Form::hidden('experience', 'Expert') !!}
                                 <div class="tab-pane" id="account">
                                     <h4 class="info-text"> Quel est votre niveau ? </h4>
                                     <div class="row">
                                         <div class="col-sm-10 col-sm-offset-1">
                                             <div class="col-sm-4">
-                                                <div class="choice" data-toggle="wizard-checkbox">
-                                                    <input type="checkbox" name="experience" value="Debutant">
+                                                <div class="choice" data-toggle="wizard-radio">
+                                                    <input type="radio" name="experience" value="Debutant">
                                                     <div class="icon">
                                                         <i class="fa fa-pencil"></i>
                                                     </div>
@@ -147,8 +148,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-sm-4">
-                                                <div class="choice" data-toggle="wizard-checkbox">
-                                                    <input type="checkbox" name="experience" value="Intermediare">
+                                                <div class="choice" data-toggle="wizard-radio">
+                                                    <input type="radio" name="experience" value="Intermediare" checked>
                                                     <div class="icon">
                                                         <i class="fa fa-terminal"></i>
                                                     </div>
@@ -156,8 +157,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-sm-4">
-                                                <div class="choice" data-toggle="wizard-checkbox">
-                                                    <input type="checkbox" name="experience" value="Expert">
+                                                <div class="choice" data-toggle="wizard-radio">
+                                                    <input type="radio" name="experience" value="Expert">
                                                     <div class="icon">
                                                         <i class="fa fa-laptop"></i>
                                                     </div>
@@ -173,39 +174,39 @@
                                             <h4 class="info-text"> Quels sont vos informations personnels ? </h4>
                                         </div>
                                         <div class="col-sm-6">
-                                            <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!}">
-                                                {!! Form::label('name', 'Nom & Prénom', ['class' => 'text-uppercase mt-10']) !!}
-                                                {!! Form::text('name', old('name'), ['class' => 'form-control', 'id' => 'name', 'placeholder' => 'Votre Nom & Prénom', 'onfocus' => "this.placeholder = ''", 'onblur' => "this.placeholder = 'Votre Username'", 'required']) !!}
-                                                @if( $errors->has('name'))
+                                            <div class="form-group {!! $errors->has('nom') ? 'has-error' : '' !!}">
+                                                {!! Form::label('nom', 'Nom & Prénom', ['class' => 'text-uppercase mt-10']) !!}
+                                                {!! Form::text('nom', old('name'), ['class' => 'form-control', 'id' => 'nom', 'placeholder' => 'Votre Nom & Prénom', 'onfocus' => "this.placeholder = ''", 'onblur' => "this.placeholder = 'Votre Nom'", 'required']) !!}
+                                                @if( $errors->has('nom'))
                                                     @component('Layout.error')
-                                                        {{$errors->first('name')}}
+                                                        {{$errors->first('nom')}}
                                                     @endcomponent
                                                 @endif
                                             </div>
-
-                                            <div class="form-group {!! $errors->has('bio') ? 'has-error' : '' !!}">
-                                                {!! Form::label('bio', 'Votre Bio', ['class' => 'text-uppercase mt-10']) !!}
-                                                {!! Form::textarea('bio', old('bio'), ['class' => 'form-control', 'id' => 'bio', 'placeholder' => 'Votre Biographie', 'onfocus' => "this.placeholder = ''", 'onblur' => "this.placeholder = 'Votre Email'", 'required']) !!}
-                                                @if( $errors->has('bio'))
-                                                    @component('Layout.error')
-                                                        {{$errors->first('bio')}}
-                                                    @endcomponent
-                                                @endif
-                                            </div> 
+                                            <div class="form-group {!! $errors->has('location') ? 'has-error' : '' !!}">
+                                                    {!! Form::label('localisation', 'Localisation', ['class' => 'text-uppercase mt-10']) !!}
+                                                    {!! Form::text('localisation', old('localisation'), ['class' => 'form-control', 'id' => 'localisation', 'placeholder' => 'Votre Localisation', 'onfocus' => "this.placeholder = ''", 'onblur' => "this.placeholder = 'Votre Email'"]) !!}
+                                                    @if( $errors->has('localisation'))
+                                                        @component('Layout.error')
+                                                            {{$errors->first('localisation')}}
+                                                        @endcomponent
+                                                    @endif
+                                            </div>
                                         </div>
                                         <div class="col-sm-6">
-                                            <div class="form-group {!! $errors->has('location') ? 'has-error' : '' !!}">
-                                                {!! Form::label('location', 'Localisation', ['class' => 'text-uppercase mt-10']) !!}
-                                                {!! Form::text('location', old('location'), ['class' => 'form-control', 'id' => 'location', 'placeholder' => 'Votre Localisation', 'onfocus' => "this.placeholder = ''", 'onblur' => "this.placeholder = 'Votre Email'", 'required']) !!}
-                                                @if( $errors->has('location'))
-                                                    @component('Layout.error')
-                                                        {{$errors->first('location')}}
-                                                    @endcomponent
-                                                @endif
+                                            <div class="form-group {!! $errors->has('recuperationEmail') ? 'has-error' : '' !!}">
+                                                    {!! Form::label('recuperationEmail', 'Email de récupération', ['class' => 'text-uppercase mt-10']) !!}
+                                                    {!! Form::text('recuperationEmail', old('recuperationEmail'), ['class' => 'form-control', 'id' => 'recuperationEmail', 'placeholder' => 'Votre Email de récupération', 'onfocus' => "this.placeholder = ''", 'onblur' => "this.placeholder = 'Votre Email'", 'required']) !!}
+                                                    @if( $errors->has('recuperationEmail'))
+                                                        @component('Layout.error')
+                                                            {{$errors->first('recuperationEmail')}}
+                                                        @endcomponent
+                                                    @endif
                                             </div>
+                                            
                                             <div class="form-group {!! $errors->has('jobs') ? 'has-error' : '' !!}">
                                                 {!! Form::label('jobs', 'Job', ['class' => 'text-uppercase mt-10']) !!}
-                                                {!! Form::text('jobs', old('jobs'), ['class' => 'form-control', 'id' => 'jobs', 'placeholder' => 'Votre Job', 'onfocus' => "this.placeholder = ''", 'onblur' => "this.placeholder = 'Votre Email'", 'required']) !!}
+                                                {!! Form::text('jobs', old('jobs'), ['class' => 'form-control', 'id' => 'jobs', 'placeholder' => 'Votre Job', 'onfocus' => "this.placeholder = ''", 'onblur' => "this.placeholder = 'Votre Email'"]) !!}
                                                 @if( $errors->has('jobs'))
                                                     @component('Layout.error')
                                                         {{$errors->first('jobs')}}
@@ -214,15 +215,15 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
-                                            <div class="form-group {!! $errors->has('recuperationEmail') ? 'has-error' : '' !!}">
-                                                {!! Form::label('recuperationEmail', 'Email de récupération', ['class' => 'text-uppercase mt-10']) !!}
-                                                {!! Form::text('recuperationEmail', old('recuperationEmail'), ['class' => 'form-control', 'id' => 'recuperationEmail', 'placeholder' => 'Votre Email de récupération', 'onfocus' => "this.placeholder = ''", 'onblur' => "this.placeholder = 'Votre Email'", 'required']) !!}
-                                                @if( $errors->has('recuperationEmail'))
-                                                    @component('Layout.error')
-                                                        {{$errors->first('recuperationEmail')}}
-                                                    @endcomponent
-                                                @endif
-                                            </div>
+                                            <div class="form-group {!! $errors->has('bio') ? 'has-error' : '' !!}">
+                                                    {!! Form::label('bio', 'Votre Bio', ['class' => 'text-uppercase mt-10']) !!}
+                                                    {!! Form::textarea('bio', old('bio'), ['class' => 'form-control', 'id' => 'bio', 'placeholder' => 'Votre Biographie', 'onfocus' => "this.placeholder = ''", 'onblur' => "this.placeholder = 'Votre Email'"]) !!}
+                                                    @if( $errors->has('bio'))
+                                                        @component('Layout.error')
+                                                            {{$errors->first('bio')}}
+                                                        @endcomponent
+                                                    @endif
+                                            </div> 
                                         </div>
                                     </div>
                                 </div>

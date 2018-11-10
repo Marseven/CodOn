@@ -14,13 +14,13 @@ class Member extends Model
      */
     protected $fillable = [
 
-        'name',
+        'nom',
         'bio',
         'experience',
-        'location',
+        'localisation',
         'jobs',
         'recuperationEmail',
-
+        'user_id'
     ];
 
 

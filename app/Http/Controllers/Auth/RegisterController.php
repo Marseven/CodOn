@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Models\Member;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {
@@ -40,6 +43,20 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+
+    public function register(Request $request)
+    {
+        $this->validatorMember($request->only('experience', 'nom', 'localisation', 'recuperationEmail', 'jobs', 'bio'));
+        $this->validator($request->only('name', 'email', 'password', 'password_confirmation'))->validate();
+        $user = $this->create($request->only('name', 'email', 'password', 'password_confirmation'));
+
+        event(new Registered($user));
+        if ($user) {
+            $this->createMember($request->only('experience', 'nom', 'localisation', 'recuperationEmail', 'jobs', 'bio'), $user->id);
+        }
+        return redirect('/login')->with('success', 'votre compte a bien été créé, valider votre inscription avec le lien reçu par mail');
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -55,6 +72,18 @@ class RegisterController extends Controller
         ]);
     }
 
+    protected function validatorMember(array $data) {
+
+        return Validator::make($data, [
+            'nom' => 'required|string|max:255',
+            'recuperationEmail' => 'required|string|email|max:255|unique:members',
+            'experience' => 'required',
+            'jobs' => 'string|max:255',
+            'localisation' => 'string|max:255',
+            'bio' => 'string|max:255'
+        ]);
+    }
+
     /**
      * Create a new user instance after a valid registration.
      *
@@ -67,6 +96,19 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+        ]);
+    }
+
+    protected function createMember (array $data, $user) {
+
+        return Member::create([
+            'nom' => $data['nom'],
+            'bio' => $data['bio'],
+            'experience' => $data['experience'],
+            'localisation' => $data['localisation'],
+            'jobs' => $data['jobs'],
+            'recuperationEmail' => $data['recuperationEmail'],
+            'user_id' => $user
         ]);
     }
 }

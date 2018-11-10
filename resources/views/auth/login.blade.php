@@ -45,6 +45,7 @@
             <div class="col-lg-6 login-form" style="margin-left: 25%;">
                 <div class="card-container">
                     <h4 class="text-uppercase mb-30"><a href="{{ route('accueil') }}">Cod'on</a></h4>
+                    @include('Layout.Flash')
                     <form class="form-signin" method="post" action="{{ route('login') }}">
                         {{ csrf_field() }}
                         <span id="reauth-email" class="reauth-email"></span>
