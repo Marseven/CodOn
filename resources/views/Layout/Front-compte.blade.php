@@ -27,6 +27,7 @@
         <link rel="stylesheet" href="{{ asset('/Front/css/animate.min.css') }}">
         <link rel="stylesheet" href="{{ asset('/Front/css/owl.carousel.css') }}">
         <link rel="stylesheet" href="{{ asset('/Front/css/main.css') }}">
+        <link rel="stylesheet" href="{{ asset('/Back/css/style-compte.css') }}">
     </head>
 
     <body class="">

@@ -538,7 +538,7 @@
         </div>
         <div class="row justify-content-between align-items-center footer-text">
             <div class="col-lg-6 col-sm-6 footer-text-left">
-                <p>Copyright © 2018</p>
+                <p>Copyright © 2019 - Groupe Cod'On</p>
             </div>
             <div class="col-lg-6 col-sm-6 footer-text-right">
                 <div class="footer-social">

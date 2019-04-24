@@ -147,6 +147,8 @@ Route::prefix('tag')->namespace('Front\Tag')->group(function(){
 | Register Authentifiaction
 */
 Route::get('/confirm/{id}/{token}', 'Auth\Registercontroller@confirm');
+Route::name('compte')->get('compte', 'Front\UserController@show');
+
 
 /*
 | Backend
